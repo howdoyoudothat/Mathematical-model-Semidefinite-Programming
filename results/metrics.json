@@ -1,0 +1,38 @@
+{
+  "primal_objective": 0.12633145350348196,
+  "dual_objective": 0.12633145338382368,
+  "primal_dual_gap": 1.196582832818649e-10,
+  "target_gain": 0.9999999999622309,
+  "maximum_sampled_sidelobe": 0.02499999838103477,
+  "max_target_violation": 3.776912116393305e-11,
+  "max_sidelobe_violation": 0.0,
+  "min_eig_Q": -9.683111591396416e-18,
+  "min_eig_dual_slack": -5.518574052910606e-10,
+  "complementary_inner_product": -6.971658675163604e-11,
+  "dual_multiplier_min": 0.0,
+  "target_dual_multiplier": 0.12933120164103684,
+  "active_sidelobe_multiplier_angles": [
+    [
+      -21.5,
+      0.05999496514425003
+    ],
+    [
+      21.5,
+      0.05999496514427612
+    ]
+  ],
+  "n_antennas": 8,
+  "carrier_hz": 28000000000.0,
+  "gamma": 0.025,
+  "number_sidelobe_samples": 40,
+  "dual_admm_iterations": 13911,
+  "primal_admm_iterations": 13846,
+  "alm_outer_iterations": 2,
+  "alm_objective": 0.12633145331629847,
+  "alm_eq_residual": 2.557624423817699e-11,
+  "dense_sidelobe_max_uniform": 0.05251077176162626,
+  "dense_sidelobe_max_optimized": 0.025075087553163115,
+  "dense_sidelobe_reduction_percent": 52.24772611038361,
+  "dense_sidelobe_reduction_dB": -3.21005943154581,
+  "power_increase_percent": 1.0651628027855686
+}
