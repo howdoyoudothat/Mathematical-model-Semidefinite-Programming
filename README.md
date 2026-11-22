@@ -44,19 +44,17 @@ On some systems, setting `OPENBLAS_NUM_THREADS=1` or `OMP_NUM_THREADS=1` can imp
 ### Real-valued I/Q covariance formulation
 
 Let $x\in\mathbb{C}^{N}$ denote the complex baseband transmit signal and let
-
 $$
-z=\begin{bmatrix}\operatorname{Re}(x)\\\operatorname{Im}(x)\end{bmatrix}\in\mathbb{R}^{2N},
+z=\begin{bmatrix}\mathrm{Re}(x)\\\mathrm{Im}(x)\end{bmatrix}\in\mathbb{R}^{2N},
 \qquad
 Q=\mathbb{E}[zz^{\mathsf T}]\succeq 0.
 $$
-
 For steering vector $a(\theta)$, define
 
 $$
-u(\theta)=\begin{bmatrix}\operatorname{Re}(a(\theta))\\\operatorname{Im}(a(\theta))\end{bmatrix},
+u(\theta)=\begin{bmatrix}\mathrm{Re}(a(\theta))\\\mathrm{Im}(a(\theta))\end{bmatrix},
 \qquad
-v(\theta)=\begin{bmatrix}-\operatorname{Im}(a(\theta))\\\operatorname{Re}(a(\theta))\end{bmatrix},
+v(\theta)=\begin{bmatrix}-\mathrm{Im}(a(\theta))\\\mathrm{Re}(a(\theta))\end{bmatrix},
 $$
 
 $$
@@ -67,9 +65,9 @@ $$
 Directional transmit power is linear in the covariance matrix:
 
 $$
-P(\theta)=\operatorname{tr}\bigl(B(\theta)Q\bigr),
+P(\theta)=\mathrm{tr}\bigl(B(\theta)Q\bigr),
 \qquad
-P_{\mathrm{tx}}=\operatorname{tr}(Q).
+P_{\mathrm{tx}}=\mathrm{tr}(Q).
 $$
 
 ### Primal SDP
@@ -78,11 +76,11 @@ With desired direction $\theta_0=0^\circ$, minimum desired response $G_0=1$, sid
 
 $$
 \begin{aligned}
-\underset{Q\succeq 0}{\operatorname{minimize}}\quad
-   & \operatorname{tr}(Q)\\
+\min_{Q\succeq 0}\quad
+   & \mathrm{tr}(Q)\\
 \text{subject to}\quad
-   & \operatorname{tr}\bigl(B(\theta_0)Q\bigr)\ge G_0,\\
-   & \operatorname{tr}\bigl(B(\theta_k)Q\bigr)\le\gamma,
+   & \mathrm{tr}\bigl(B(\theta_0)Q\bigr)\ge G_0,\\
+   & \mathrm{tr}\bigl(B(\theta_k)Q\bigr)\le\gamma,
    \quad\theta_k\in\Theta_s.
 \end{aligned}
 $$
@@ -93,7 +91,7 @@ Introducing nonnegative dual multipliers $\lambda_0$ for the desired response an
 
 $$
 \begin{aligned}
-\underset{\lambda_0,\,\mu_k\ge0}{\operatorname{maximize}}\quad
+\max_{\lambda_0,\,\mu_k\ge0}\quad
   & G_0\lambda_0-\gamma\sum_k\mu_k\\
 \text{subject to}\quad
   & I-\lambda_0 B(\theta_0)
@@ -222,8 +220,7 @@ The slight increase in transmit power required to achieve the improved sidelobe 
 │   ├── primal_admm_trace.csv
 │   ├── dual_admm_trace.csv
 │   └── alm_trace.csv
-└
-    
+└── results/                    # Numerical outputs and solver traces
 ```
 
 The `results/` directory contains the numerical data underlying the plotted figures, allowing independent inspection without manually digitizing the images.
